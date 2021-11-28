@@ -21,6 +21,8 @@
 		A552B2FA2753E06A00F1EB5E /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B2F92753E06A00F1EB5E /* DoubleExtension.swift */; };
 		A552B2FC2753E6B800F1EB5E /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B2FB2753E6B800F1EB5E /* ViewExtension.swift */; };
 		A552B2FE2753EB9600F1EB5E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B2FD2753EB9600F1EB5E /* HomeViewModel.swift */; };
+		A552B3012753F0E800F1EB5E /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B3002753F0E800F1EB5E /* CoinDataService.swift */; };
+		A552B3042753F9DF00F1EB5E /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B3032753F9DF00F1EB5E /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		A552B2F92753E06A00F1EB5E /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		A552B2FB2753E6B800F1EB5E /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		A552B2FD2753EB9600F1EB5E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A552B3002753F0E800F1EB5E /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		A552B3032753F9DF00F1EB5E /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				A552B2D32753CDAD00F1EB5E /* CryptoAppApp.swift */,
+				A552B3022753F9B300F1EB5E /* Utilities */,
 				A552B2E32753CE5A00F1EB5E /* Extensions */,
+				A552B2FF2753F0C300F1EB5E /* Services */,
 				A552B2F22753D4CF00F1EB5E /* Models */,
 				A552B2E62753CF2900F1EB5E /* Core */,
 				A552B2D52753CDAD00F1EB5E /* ContentView.swift */,
@@ -161,6 +167,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A552B2FF2753F0C300F1EB5E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A552B3002753F0E800F1EB5E /* CoinDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A552B3022753F9B300F1EB5E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A552B3032753F9DF00F1EB5E /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +258,7 @@
 				A552B2E52753CE6F00F1EB5E /* ColorExtension.swift in Sources */,
 				A552B2EB2753CF5A00F1EB5E /* HomeView.swift in Sources */,
 				A552B2D62753CDAD00F1EB5E /* ContentView.swift in Sources */,
+				A552B3012753F0E800F1EB5E /* CoinDataService.swift in Sources */,
 				A552B2EF2753D06C00F1EB5E /* CircleButtonView.swift in Sources */,
 				A552B2FC2753E6B800F1EB5E /* ViewExtension.swift in Sources */,
 				A552B2FE2753EB9600F1EB5E /* HomeViewModel.swift in Sources */,
@@ -243,6 +266,7 @@
 				A552B2F12753D26500F1EB5E /* CircleButtonAnimationView.swift in Sources */,
 				A552B2F82753DC7100F1EB5E /* PreviewProviderExtension.swift in Sources */,
 				A552B2F42753D4E800F1EB5E /* CoinModel.swift in Sources */,
+				A552B3042753F9DF00F1EB5E /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
