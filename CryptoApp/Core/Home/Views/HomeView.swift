@@ -21,6 +21,9 @@ struct HomeView: View {
             // Camada de conteúdo
             VStack{
                 homeHeader
+                
+                SearchBarView(searchText: $vm.searchText)
+                
                 columnTitles
                 
                 // Se showPortifolio == false então mostra View

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct CryptoAppApp: App {
+    init() {
+        PrintConsole.printAppStart()
+    }
     @StateObject private var vm = HomeViewModel()
     
     var body: some Scene {

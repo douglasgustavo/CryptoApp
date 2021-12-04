@@ -39,6 +39,9 @@ class NetworkingManager {
         // Tenta obter o retorno, se a resposta HTTP estiver entre 200 e 300 (Sucesso HTTP), continua
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
+                  if let error = output.response as? HTTPURLResponse {
+                      PrintConsole.printConsoleError(mensagem: "Erro HTTP \(error.statusCode) - Função: NetworkingManager.handleURLResponse", erro: nil)
+                  }
                   throw NetworkingError.badURLResponse(url: url)
               }
         // Retorno do Data
@@ -53,7 +56,7 @@ class NetworkingManager {
             break
             // Caso erro, imprime erro no console
         case .failure(let error):
-            print(error.localizedDescription)
+            PrintConsole.printConsoleError(mensagem: "Erro ao validar retorno. - Função: NetworkingManager.handleCompletion", erro: error)
         }
     }
     
