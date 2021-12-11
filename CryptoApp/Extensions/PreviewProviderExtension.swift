@@ -193,6 +193,7 @@ class DeveloperPreview {
     
     let stat1 = StatisticModel(title: "Market Cap", value: "R$ 12.5 M", percentageChange: 25.34)
     let stat2 = StatisticModel(title: "Market Cap", value: "R$ 12.5 M", percentageChange: -25.34)
-    let stat3 = StatisticModel(title: "Total Volume", value: "R$ 1.23 Tr")
+    let stat3 = StatisticModel(title: "Market Cap", value: "R$ 12.5 M", percentageChange: 0)
+    let stat4 = StatisticModel(title: "Total Volume", value: "R$ 1.23 Tr")
     
 }

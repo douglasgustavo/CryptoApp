@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct CryptoAppApp: App {
     init() {
-        PrintConsole.printAppStart()
+        ConsoleLog.printAppStart()
     }
     @StateObject private var vm = HomeViewModel()
     

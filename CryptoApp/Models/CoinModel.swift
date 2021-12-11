@@ -11,7 +11,7 @@ import Foundation
  Informações da API
  
  Documentação: https://www.coingecko.com/pt/api/documentation?
- URL: https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h
+ URL [GET]: https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h
  => vs_currency: String = "brl" -> Código Moeda
  => order: String = market_cap_desc -> Ordenação
  => per_page: Int = 250(Padrão) -> Qtd. por página

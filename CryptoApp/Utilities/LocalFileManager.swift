@@ -38,7 +38,7 @@ class LocalFileManager {
         do {
             try data.write(to: url)
         } catch let error {
-            PrintConsole.printConsoleError(mensagem: "Erro ao salvar imagem \(imageName)", erro: error)
+            ConsoleLog.printConsoleError(mensagem: "Erro ao salvar imagem \(imageName)", fileID: "LocalFileManager.saveImage",function: #function, erro: error)
         }
         
     }
@@ -73,7 +73,7 @@ class LocalFileManager {
                 try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
             } catch let error {
                 // Erro
-                PrintConsole.printConsoleError(mensagem: "Erro ao criar pasta \(folderName)", erro: error)
+                ConsoleLog.printConsoleError(mensagem: "Erro ao criar pasta \(folderName)", fileID: "LocalFileManager.createFolderIfNeeded", function: #function, erro: error)
             }
         }
     }

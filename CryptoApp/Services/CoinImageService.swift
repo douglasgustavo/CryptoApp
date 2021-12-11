@@ -25,6 +25,7 @@ class CoinImageService {
     
     private func getCoinImage() {
         if let savedImage = fileManager.getImage(imageName: coin.id, folderName: folderName) {
+            ConsoleLog.printConsoleInfo(message: "CoinImageService.getCoinImage - Carregada imagem moeda: " + coin.symbol.uppercased() + " do storage.")
             image = savedImage
         } else {
             downloadCoinImage()
@@ -32,6 +33,7 @@ class CoinImageService {
     }
     
     private func downloadCoinImage() {
+        ConsoleLog.printConsoleInfo(message: "CoinImageService.downloadCoinImage - Download imagem moeda: " + coin.symbol.uppercased() + ".")
         guard let url = URL(string: coin.image) else { return }
         
         imageSubscription = NetworkingManager.download(url: url)

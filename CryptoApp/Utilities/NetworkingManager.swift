@@ -40,7 +40,7 @@ class NetworkingManager {
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
                   if let error = output.response as? HTTPURLResponse {
-                      PrintConsole.printConsoleError(mensagem: "Erro HTTP \(error.statusCode) - Função: NetworkingManager.handleURLResponse", erro: nil)
+                      ConsoleLog.printConsoleError(mensagem: "Erro HTTP \(error.statusCode)", fileID: #fileID, function: #function, erro: nil)
                   }
                   throw NetworkingError.badURLResponse(url: url)
               }
@@ -56,8 +56,7 @@ class NetworkingManager {
             break
             // Caso erro, imprime erro no console
         case .failure(let error):
-            PrintConsole.printConsoleError(mensagem: "Erro ao validar retorno. - Função: NetworkingManager.handleCompletion", erro: error)
-            debugPrint(error)
+            ConsoleLog.printConsoleError(mensagem: "Erro ao validar retorno.", fileID: #fileID, function: #function, erro: error)
         }
     }
     
