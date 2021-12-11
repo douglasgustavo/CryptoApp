@@ -17,24 +17,22 @@ struct SearchBarView: View {
                     searchText.isEmpty ? .theme.secondaryText : .theme.accent
                 )
             
-            TextField("Procurar moeda...", text: $searchText)
+            TextField("Procurar...", text: $searchText)
                 .disableAutocorrection(true)
                 .foregroundColor(.theme.accent)
-                .overlay(
-                    Image(systemName: "xmark.circle.fill")
-                        .padding()
-                        .offset(x: 10)
-                        .foregroundColor(.theme.accent)
-                        .opacity(searchText.isEmpty ? 0.0 : 1.0)
-                        .onTapGesture {
-                            UIApplication.shared.endEditing()
-                            self.searchText = ""
-                        }
-                    ,alignment: .trailing
-                )
+            
+            Image(systemName: "xmark.circle.fill")
+                .padding()
+                .offset(x: 10)
+                .foregroundColor(.theme.accent)
+                .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                    self.searchText = ""
+                }
         }
         .font(.headline)
-        .padding()
+        .padding(.horizontal)
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .fill(Color.theme.background)
@@ -50,7 +48,13 @@ struct SearchBarView_Previews: PreviewProvider {
             SearchBarView(searchText: .constant(""))
                 .configurePreview(colorScheme: .light, previewLayout: .sizeThatFits)
             
+            SearchBarView(searchText: .constant("eth"))
+                .configurePreview(colorScheme: .light, previewLayout: .sizeThatFits)
+            
             SearchBarView(searchText: .constant(""))
+                .configurePreview(colorScheme: .dark, previewLayout: .sizeThatFits)
+            
+            SearchBarView(searchText: .constant("Bitcoin"))
                 .configurePreview(colorScheme: .dark, previewLayout: .sizeThatFits)
         }
     }

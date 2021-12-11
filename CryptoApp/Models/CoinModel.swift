@@ -27,7 +27,7 @@ class CoinModel: Identifiable, Codable {
     let currentPrice: Double
     let marketCap, marketCapRank: Int?
     let fullyDilutedValuation: Int?
-    let totalVolume: Int?
+    let totalVolume: Double?
     let high24H, low24H, priceChange24H, priceChangePercentage24H: Double?
     let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply: Double?
     let totalSupply, maxSupply: Double?
@@ -70,7 +70,7 @@ class CoinModel: Identifiable, Codable {
         case currentHoldings
     }
 
-    init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Int?, marketCapRank: Int?, fullyDilutedValuation: Int?, totalVolume: Int?, high24H: Double?, low24H: Double?, priceChange24H: Double?, priceChangePercentage24H: Double?, marketCapChange24H: Double?, marketCapChangePercentage24H: Double?, circulatingSupply: Double?, totalSupply: Double?, maxSupply: Double?, ath: Double?, athChangePercentage: Double?, athDate: String?, atl: Double?, atlChangePercentage: Double?, atlDate: String?, roi: Roi?, lastUpdated: String?, sparklineIn7D: SparklineIn7D?, priceChangePercentage1HInCurrency: Double?, currentHoldings: Double?) {
+    init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Int?, marketCapRank: Int?, fullyDilutedValuation: Int?, totalVolume: Double?, high24H: Double?, low24H: Double?, priceChange24H: Double?, priceChangePercentage24H: Double?, marketCapChange24H: Double?, marketCapChangePercentage24H: Double?, circulatingSupply: Double?, totalSupply: Double?, maxSupply: Double?, ath: Double?, athChangePercentage: Double?, athDate: String?, atl: Double?, atlChangePercentage: Double?, atlDate: String?, roi: Roi?, lastUpdated: String?, sparklineIn7D: SparklineIn7D?, priceChangePercentage1HInCurrency: Double?, currentHoldings: Double?) {
         self.id = id
         self.symbol = symbol
         self.name = name

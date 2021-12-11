@@ -85,9 +85,13 @@ extension HomeView {
     // Lista com todas as moedas
     private var allCoinList: some View {
         List {
-            ForEach(vm.allCoins) { coin in
-                CoinRowView(coin: coin, showHoldingsColumn: false)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            if vm.allCoins.count > 0 {
+                ForEach(vm.allCoins) { coin in
+                    CoinRowView(coin: coin, showHoldingsColumn: false)
+                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                }
+            } else {
+                loadingMessage
             }
         }
         .listStyle(PlainListStyle())
@@ -96,9 +100,13 @@ extension HomeView {
     // Lista com todas as moedas da carteira
     private var portfolioCoinList: some View {
         List {
-            ForEach(vm.portfolioCoins) { coin in
-                CoinRowView(coin: coin, showHoldingsColumn: true)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            if vm.portfolioCoins.count > 0 {
+                ForEach(vm.portfolioCoins) { coin in
+                    CoinRowView(coin: coin, showHoldingsColumn: true)
+                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                }
+            } else {
+                loadingMessage
             }
         }
         .listStyle(PlainListStyle())
@@ -120,5 +128,32 @@ extension HomeView {
         .font(.caption)
         .foregroundColor(.theme.secondaryText)
         .padding(.horizontal)
+    }
+    
+    // Se isLoaded == false então apresenta mensagem de carregando se não houver nenhuma moeda sendo exibida.
+    private var loadingMessage: some View {
+        HStack{
+            Spacer()
+            if !self.vm.isLoaded {
+                Text("Carregando...")
+                    .font(.caption)
+                    .foregroundColor(.theme.secondaryText)
+                    .frame(minWidth: 30)
+            } else {
+                if !showPortifolio {
+                    Text("Nenhuma Moeda Localizada")
+                        .font(.caption)
+                        .foregroundColor(.theme.secondaryText)
+                        .frame(minWidth: 30)
+                } else {
+                    Text("Nada por aqui...")
+                        .font(.caption)
+                        .foregroundColor(.theme.secondaryText)
+                        .frame(minWidth: 30)
+                }
+            }
+            
+            Spacer()
+        }
     }
 }

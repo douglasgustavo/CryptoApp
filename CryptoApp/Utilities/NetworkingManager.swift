@@ -57,6 +57,7 @@ class NetworkingManager {
             // Caso erro, imprime erro no console
         case .failure(let error):
             PrintConsole.printConsoleError(mensagem: "Erro ao validar retorno. - Função: NetworkingManager.handleCompletion", erro: error)
+            debugPrint(error)
         }
     }
     

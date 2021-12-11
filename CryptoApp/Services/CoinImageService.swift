@@ -38,10 +38,10 @@ class CoinImageService {
             .tryMap({ data -> UIImage? in
                 return UIImage(data: data)
             })
-            // Se ocorrer algum erro, imprime no console o erro, se não, continua a execução
+        // Se ocorrer algum erro, imprime no console o erro, se não, continua a execução
             .sink(receiveCompletion: NetworkingManager.handleCompletion,
-              // Recebe o valor já decodificado e retorna para a variável @Published
-              receiveValue: { [weak self] returnedImage in
+                  // Recebe o valor já decodificado e retorna para a variável @Published
+                  receiveValue: { [weak self] returnedImage in
                 guard let self = self, let downloadedImagem = returnedImage else { return }
                 // Associa o valor a variável allCoins
                 self.image = downloadedImagem

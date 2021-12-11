@@ -24,12 +24,12 @@ class CoinDataService {
         // Atribuindo a um cancelável o retorno da função de request
         // Obtem as informações da URL
         coinSubscription = NetworkingManager.download(url: url)
-            // Realiza a decodificação com JSONDecoder() informando o tipo array de CoinModel [CoinModel]
+        // Realiza a decodificação com JSONDecoder() informando o tipo array de CoinModel [CoinModel]
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
-            // Se ocorrer algum erro, imprime no console o erro, se não, continua a execução
+        // Se ocorrer algum erro, imprime no console o erro, se não, continua a execução
             .sink(receiveCompletion: NetworkingManager.handleCompletion,
-              // Recebe o valor já decodificado e retorna para a variável @Published
-              receiveValue: { [weak self] returnedCoins in
+                  // Recebe o valor já decodificado e retorna para a variável @Published
+                  receiveValue: { [weak self] returnedCoins in
                 // Associa o valor a variável allCoins
                 self?.allCoins = returnedCoins
                 // Realiza o cancelamento da requisição após obter as informações com sucesso.
