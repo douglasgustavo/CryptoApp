@@ -29,6 +29,9 @@
 		A552B3072754005200F1EB5E /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B3062754005200F1EB5E /* CoinImageView.swift */; };
 		A552B3092754009C00F1EB5E /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B3082754009C00F1EB5E /* CoinImageViewModel.swift */; };
 		A552B30B275401A300F1EB5E /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A552B30A275401A300F1EB5E /* CoinImageService.swift */; };
+		A5A711D12764CC9E00478119 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A711D02764CC9E00478119 /* StatisticModel.swift */; };
+		A5A711D32764CE4B00478119 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A711D22764CE4B00478119 /* StatisticView.swift */; };
+		A5A711D52764D16F00478119 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A711D42764D16F00478119 /* HomeStatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		A552B3062754005200F1EB5E /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		A552B3082754009C00F1EB5E /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		A552B30A275401A300F1EB5E /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
+		A5A711D02764CC9E00478119 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		A5A711D22764CE4B00478119 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		A5A711D42764D16F00478119 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				A552B2EA2753CF5A00F1EB5E /* HomeView.swift */,
+				A5A711D42764D16F00478119 /* HomeStatsView.swift */,
 				A552B2F52753DB8B00F1EB5E /* CoinRowView.swift */,
 			);
 			path = Views;
@@ -160,6 +167,7 @@
 				A552B3052754004600F1EB5E /* CoinImage */,
 				A552B2ED2753D05F00F1EB5E /* CircleButton */,
 				A52DEAEB275BE1E00033BAA8 /* SearchBarView.swift */,
+				A5A711D22764CE4B00478119 /* StatisticView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A552B2F32753D4E800F1EB5E /* CoinModel.swift */,
+				A5A711D02764CC9E00478119 /* StatisticModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A552B2FA2753E06A00F1EB5E /* DoubleExtension.swift in Sources */,
+				A5A711D12764CC9E00478119 /* StatisticModel.swift in Sources */,
 				A552B2F62753DB8B00F1EB5E /* CoinRowView.swift in Sources */,
 				A52DEAEE275BE76D0033BAA8 /* UIApplicationExtension.swift in Sources */,
 				A552B2E52753CE6F00F1EB5E /* ColorExtension.swift in Sources */,
@@ -287,9 +297,11 @@
 				A552B3012753F0E800F1EB5E /* CoinDataService.swift in Sources */,
 				A552B2EF2753D06C00F1EB5E /* CircleButtonView.swift in Sources */,
 				A552B30B275401A300F1EB5E /* CoinImageService.swift in Sources */,
+				A5A711D32764CE4B00478119 /* StatisticView.swift in Sources */,
 				A552B2FC2753E6B800F1EB5E /* ViewExtension.swift in Sources */,
 				A552B2FE2753EB9600F1EB5E /* HomeViewModel.swift in Sources */,
 				A552B2D42753CDAD00F1EB5E /* CryptoAppApp.swift in Sources */,
+				A5A711D52764D16F00478119 /* HomeStatsView.swift in Sources */,
 				A52DEAEA275BC8890033BAA8 /* PrintConsole.swift in Sources */,
 				A52DEAE8275BC4D40033BAA8 /* LocalFileManager.swift in Sources */,
 				A52DEAEC275BE1E00033BAA8 /* SearchBarView.swift in Sources */,

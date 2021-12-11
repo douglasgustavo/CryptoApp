@@ -21,6 +21,7 @@ import Foundation
  
  */
 
+/// Model da moeda retornada pela API
 class CoinModel: Identifiable, Codable {
     let id, symbol, name: String
     let image: String

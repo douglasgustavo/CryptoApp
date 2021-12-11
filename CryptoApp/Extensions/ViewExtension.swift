@@ -36,4 +36,8 @@ extension View {
                 .previewLayout(previewLayout)
         }
     }
+    
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
+    }
 }

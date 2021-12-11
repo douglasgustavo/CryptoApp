@@ -190,4 +190,9 @@ class DeveloperPreview {
                 54351.38016513259,
                 55075.74714587423
     ]), priceChangePercentage1HInCurrency: 0.26221081701429916, currentHoldings: 1.5)
+    
+    let stat1 = StatisticModel(title: "Market Cap", value: "R$ 12.5 M", percentageChange: 25.34)
+    let stat2 = StatisticModel(title: "Market Cap", value: "R$ 12.5 M", percentageChange: -25.34)
+    let stat3 = StatisticModel(title: "Total Volume", value: "R$ 1.23 Tr")
+    
 }
