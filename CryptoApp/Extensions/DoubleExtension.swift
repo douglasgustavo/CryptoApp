@@ -60,7 +60,7 @@ extension Double {
         formatter.currencyCode = "brl" // <- Muda moeda
         formatter.currencySymbol = "R$ " // <- Muda simbolo moeda
         
-        formatter.minimumFractionDigits = 0
+        formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         
         return formatter
@@ -91,6 +91,44 @@ extension Double {
     /// ```
     func asPercentString() -> String {
         return asNumberString() + "%"
+    }
+
+    /// Converte um Double em uma representação de String com abreviacao
+    /// ```
+    /// Converte 12 para "12.00"
+    /// Converte 1234 para "1.23 K"
+    /// Converte 123456 para "123.45 K"
+    /// Converte 12345678 para "12.34 M"
+    /// Converte 1234567890 para "1.23 Bi"
+    /// Converte 123456789012 para "123.45 Bi"
+    /// Converte 12345678901234 para "12.34 Tr"
+    /// ```
+    func formattedWithAbbreviations() -> String {
+        let num = abs(Double(self))
+        let sign = (self < 0) ? "-" : ""
+        
+        switch num {
+        case 1_000_000_000_000...:
+            let formatted = num / 1_000_000_000_000
+            let stringFormatted = formatted.asNumberString()
+            return "\(sign)\(stringFormatted) Tr"
+        case 1_000_000_000...:
+            let formatted = num / 1_000_000_000
+            let stringFormatted = formatted.asNumberString()
+            return "\(sign)\(stringFormatted) Bi"
+        case 1_000_000...:
+            let formatted = num / 1_000_000
+            let stringFormatted = formatted.asNumberString()
+            return "\(sign)\(stringFormatted) M"
+        case 1_000...:
+            let formatted = num / 1_000
+            let stringFormatted = formatted.asNumberString()
+            return "\(sign)\(stringFormatted) K"
+        case 0:
+            return self.asNumberString()
+        default:
+            return "\(self)\(self)"
+        }
     }
     
 }

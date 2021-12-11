@@ -10,33 +10,38 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
-    @State private var showPortifolio: Bool = false
+    @State private var showPortfolio: Bool = false // Anima para direita
+    @State private var showPortfolioView: Bool = false // Nova aba
     
     var body: some View {
         ZStack {
             // Camada de background
             Color.theme.background
                 .ignoresSafeArea()
+                .sheet(isPresented: $showPortfolioView, content: {
+                    PortfolioView()
+                        .environmentObject(vm)
+                })
             
             // Camada de conteúdo
             VStack{
                 homeHeader
                 
-                HomeStatsView(showPortfolio: $showPortifolio)
+                HomeStatsView(showPortfolio: $showPortfolio)
                 
                 SearchBarView(searchText: $vm.searchText)
                 
                 columnTitles
                 
                 // Se showPortifolio == false então mostra View
-                if !showPortifolio {
+                if !showPortfolio {
                     allCoinList
                     // MARK: Animação
                         .transition(.move(edge: .leading))
                 }
                 
                 // Se showPortifolio == true então mostra View
-                if showPortifolio {
+                if showPortfolio {
                     portfolioCoinList
                         .transition(.move(edge: .trailing))
                 }
@@ -61,23 +66,28 @@ extension HomeView {
     // Header da View
     private var homeHeader: some View {
         HStack{
-            CircleButtonView(iconName: showPortifolio ? "plus" : "info")
+            CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .animation(.none)
+                .onTapGesture {
+                    if showPortfolio {
+                        showPortfolioView.toggle()
+                    }
+                }
                 .background(
-                    CircleButtonAnimationView(animate: $showPortifolio)
+                    CircleButtonAnimationView(animate: $showPortfolio)
                 )
             Spacer()
-            Text(showPortifolio ? "Carteira" : "Valores Agora")
+            Text(showPortfolio ? "Carteira" : "Valores Agora")
                 .font(.headline)
                 .fontWeight(.heavy)
                 .foregroundColor(.theme.accent)
                 .animation(.none)
             Spacer()
             CircleButtonView(iconName: "chevron.right")
-                .rotationEffect(Angle(degrees: showPortifolio ? 180 : 0))
+                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
                 .onTapGesture {
                     withAnimation(.spring()) {
-                        showPortifolio.toggle()
+                        showPortfolio.toggle()
                     }
                 }
         }
@@ -120,7 +130,7 @@ extension HomeView {
             Text("Moeda")
                 .padding(.leading)
             Spacer()
-            if showPortifolio {
+            if showPortfolio {
                 Text("Carteira / Qtd.")
             }
             
@@ -142,7 +152,7 @@ extension HomeView {
                     .foregroundColor(.theme.secondaryText)
                     .frame(minWidth: 30)
             } else {
-                if !showPortifolio {
+                if !showPortfolio {
                     Text("Nenhuma Moeda Localizada")
                         .font(.caption)
                         .foregroundColor(.theme.secondaryText)

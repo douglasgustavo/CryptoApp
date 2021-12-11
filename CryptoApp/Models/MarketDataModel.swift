@@ -43,14 +43,14 @@ struct MarketDataModel: Codable {
         
         // Forma encurtada do if let acima
         if let item = totalMarketCap.first(where: {$0.key == "brl"}) {
-            return "\(item.value)"
+            return "R$ \(item.value.formattedWithAbbreviations())"
         }
         return ""
     }
     
     var volume: String {
         if let item = totalVolume.first(where: {$0.key == "brl"}) {
-            return "\(item.value)"
+            return "R$ \(item.value.formattedWithAbbreviations())"
         }
         return ""
     }

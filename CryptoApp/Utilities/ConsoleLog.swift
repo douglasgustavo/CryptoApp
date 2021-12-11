@@ -9,13 +9,15 @@ import Foundation
 
 /** Classe que contém métodos estáticos para realizar log do aplicativo no console.
 
- 1. Funções:
-
- - `printAppStart`: Função que imprime o início da execução do app
- - `printConsoleError`: Função estática utilizada para imprimir no console erros.
- - `printConsoleSuccess`: Função estática utilizada para imprimir no console informações.
- - `printConsoleInfo`: Função estática utilizada para imprimir no console informações.
- - `printConsoleAlert`: Função estática utilizada para imprimir no console alertas.
+ - Funções
+ 
+ ```
+ printAppStart() Função que imprime o início da execução do app
+ printConsoleError() Função estática utilizada para imprimir no console erros.
+ printConsoleSuccess:() Função estática utilizada para imprimir no console informações.
+ printConsoleInfo() Função estática utilizada para imprimir no console informações.
+ printConsoleAlert() Função estática utilizada para imprimir no console alertas.
+ ```
  */
 class ConsoleLog {
     /**

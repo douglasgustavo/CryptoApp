@@ -11,6 +11,10 @@ import SwiftUI
 struct CryptoAppApp: App {
     init() {
         ConsoleLog.printAppStart()
+        // Altera a cor do texto grande da barra de navegação
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor(.theme.accent)]
+        // Altera a cor do texto pequeno da barra de navegação
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(.theme.accent)]
     }
     @StateObject private var vm = HomeViewModel()
     

@@ -40,4 +40,8 @@ extension View {
     func getRect() -> CGRect {
         return UIScreen.main.bounds
     }
+    
+    func closeKeyboard() {
+        UIApplication.shared.endEditing()
+    }
 }

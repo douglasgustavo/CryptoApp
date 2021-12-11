@@ -13,4 +13,4 @@ import SwiftUI
  False = Somente erros
  True = Log completo
  */
-let DEBUG_MODE: TipoDebug = .completo
+let DEBUG_MODE: TipoDebug = .errosEAlertas

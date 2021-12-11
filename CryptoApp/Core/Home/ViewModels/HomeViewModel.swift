@@ -36,7 +36,7 @@ class HomeViewModel: ObservableObject {
         $searchText
             .combineLatest(coinDataService.$allCoins)
         // Aguarda 0.5 segundos antes de executar o .map
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+        //  .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         // Faz o map seguindo o texto digitado pelo usuário
             .map(filterCoins)
         // Atribui o retorno do .map à variável publicada returnedCoins
